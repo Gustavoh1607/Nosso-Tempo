@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <script>
+        // Função para verificar o login
+        function verificarLogin() {
+            // Defina seu nome de usuário e senha
+
+            const usuarioCorreto = "natygus";
+            const senhaCorreta = "300521";
+
+            // Pegue os valores inseridos pelo usuário
+            const nomeUsuario = document.getElementById("usuario").value;
+            const senha = document.getElementById("senha").value;
+
+            // Verifique se as credenciais estão corretas
+            if (nomeUsuario === usuarioCorreto && senha === senhaCorreta) {
+                // Se estiver correto, redireciona para outra página
+                window.location.href = "nos.html";  // Substitua por sua página
+            } else {
+                // Caso contrário, exibe uma mensagem de erro
+                alert("Usuário ou senha incorretos. Tente novamente.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Login</h2>
+    <form onsubmit="event.preventDefault(); verificarLogin();">
+        <label for="usuario">Nome de usuário:</label><br>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" name="senha" required><br><br>
+
+        <input type="submit" value="Entrar">
+    </form>
+</body>
+</html>

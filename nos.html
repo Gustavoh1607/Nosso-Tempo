@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nosso Tempo</title>
+</head>
+
+<body bgcolor="#E8B9AB">
+	<center>
+		<h1>Bem Vinda ao Nosso Relógio</h1>
+		<style> 
+			img { border-radius:15px; }
+		</style>
+	<img src="img\foto.jpg" width="300" height="400" border="2">
+	 <h3>Nosso Tempo Contando...</h3>
+	     <script>
+        // Função para calcular o tempo que passou desde a data fornecida
+        function atualizarTempo() {
+            // Data de início (exemplo: 1º de janeiro de 2023)
+            const dataInicial = new Date("2021-05-30T00:00:00");
+
+            // Obter data e hora atuais
+            const dataAtual = new Date();
+
+            // Calcular a diferença em milissegundos
+            const diffMs = dataAtual - dataInicial;
+
+            // Converter a diferença em dias, horas, minutos e segundos
+            const dias = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+            // Atualizar o conteúdo na página
+            document.getElementById("tempo").textContent = `${dias} dias, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
+        }
+
+        // Chama a função a cada 1 segundo (1000 ms)
+        setInterval(atualizarTempo, 1000);
+    </script>
+</head>
+<body>
+    <p id="tempo"></p>
+    <a href="https://www.youtube.com/watch?v=G_MikP32oic">ESCULTE!</a>
+</body>
+</html>
